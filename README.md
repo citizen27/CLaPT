@@ -1,6 +1,6 @@
 # CLaPT - Collect Logs and Parse Them
 
-Mind numbing parts of this docuemntation have been written by AI, particularly ChatGPT and Bard. All PowerShell scripts are written, tested and developed by me, or me and other humans. 
+Mind numbing parts of this documentation have been written by AI, particularly ChatGPT and Bard. All PowerShell scripts are written, tested and developed by me, or me and other humans. 
 
 ## Overview
 
@@ -27,6 +27,6 @@ Before using this tool, ensure you have the following prerequisites:
 - Windows operating system (compatible with Windows Event Logs)
 - PowerShell (Seems obvious)
 - Administrative privileges (required for accessing event logs)
-- Python 3.x (FUTURE)
+- Python 3.x (FUTURE possibly)
 
 ## Usage
