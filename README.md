@@ -1,4 +1,4 @@
-# CLaPT - 
+# CLaPT 
 Collect Logs and Parse Them
 
 ## Overview
