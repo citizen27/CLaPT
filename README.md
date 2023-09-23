@@ -1,6 +1,6 @@
 # CLaPT - Collect Logs and Parse Them
 
-Mind numbing parts of this docuemnttaion have been written by AI, particularly ChatGPT and Bard. All PowerShell scripts are written, tested and developed by me, or me and other humans. 
+Mind numbing parts of this docuemntation have been written by AI, particularly ChatGPT and Bard. All PowerShell scripts are written, tested and developed by me, or me and other humans. 
 
 ## Overview
 
