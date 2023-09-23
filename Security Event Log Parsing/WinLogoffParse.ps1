@@ -4,7 +4,7 @@ $eventID = 4634
 # Query the Security Event Log for logoff events
 $logoffEvents = Get-WinEvent -LogName Security -FilterXPath "*[System[(EventID=$eventID)]]"
 
-# Check if there are logon events
+# Check if there are logoff events
 if ($logoffEvents.Count -eq 0) {
     Write-Host "No logoff events found."
 } 
@@ -12,7 +12,7 @@ else {
     Write-Host "Logoff Events:"
     Write-Host "-------------------------"
 
-    # Display relevant information from the logon events
+    # Display relevant information from the logoff events
     $logoffEvents | ForEach-Object {
         $evt = $_
         $timeCreated = $evt.TimeCreated

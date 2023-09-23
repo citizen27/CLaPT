@@ -1,10 +1,10 @@
 # Define the logoff event ID (4625)
 $eventID = 4625
 
-# Query the Security Event Log for logoff events
+# Query the Security Event Log for failed logon events
 $logonfailEvents = Get-WinEvent -LogName Security -FilterXPath "*[System[(EventID=$eventID)]]"
 
-# Check if there are logon events
+# Check if there are failed logon events
 if ($logonfailEvents.Count -eq 0) {
     Write-Host "No failed logon events found."
 } 

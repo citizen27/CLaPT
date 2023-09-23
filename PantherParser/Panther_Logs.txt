@@ -1,0 +1,7 @@
+Panther logs are useful to determine issues with rollbacks, upgrade or system failures. Particularly useful after updates on Windows systems. 
+
+Collect if needed, pretty low importance in most use cases.
+
+Panther logs get really granular and annoying. Better artifacts exist, and see the link below for how convoluted these get. 
+
+https://support.microsoft.com/en-gb/topic/log-files-that-are-created-when-you-upgrade-to-a-new-version-of-windows-9ec8aa31-0cc1-a0b2-2d98-e9c6714349b9
