@@ -1,10 +1,10 @@
 # CLaPT - Collect Logs and Parse Them
 
-Mind numbing parts of this docuemnttaion have been written by AI, particularly ChatGPT. All PowerShell scripts are written, tested and developed by me, or me and other humans. 
+Mind numbing parts of this docuemnttaion have been written by AI, particularly ChatGPT and Bard. All PowerShell scripts are written, tested and developed by me, or me and other humans. 
 
 ## Overview
 
-This code repository contains many scripts for collecting and parsing Windows Logs and databases. It is designed to assist in the monitoring and analysis of Windows system events, enabling you to gain insights into system activities and potential security incidents.
+This code repository contains many scripts for collecting and parsing Windows Logs and databases. It is designed to assist in the monitoring and analysis of Windows system events, enabling you to gain insights into system activities and potential security incidents or visibility gaps. This "toolkit" eventually plans encompass a massive amount of automated triage. I am focusing less on the digital forensic side of things, and more on rapid repsonse to security incidents from an IR perspective.
 
 ## Features
 
