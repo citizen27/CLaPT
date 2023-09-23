@@ -7,22 +7,23 @@ $logonEvents = Get-WinEvent -LogName Security -FilterXPath "*[System[(EventID=$e
 # Check if there are logon events
 if ($logonEvents.Count -eq 0) {
     Write-Host "No logon events found."
-} else {
+}
+else {
     Write-Host "Logon Events:"
     Write-Host "-------------------------"
 
     # Display relevant information from the logon events
     $logonEvents | ForEach-Object {
-        $event = $_
-        $timeCreated = $event.TimeCreated
-        $user = $event.Properties[5].Value
+        $evt = $_
+        $timeCreated = $evt.TimeCreated
+        $user = $evt.Properties[5].Value
         Write-Host "Time: $timeCreated"
         Write-Host "User: $user"
         Write-Host "-------------------------"
     }
 
     # Save logon events to a CSV file
-    $logonEvents | Select-Object TimeCreated, @{Name="User";Expression={$_.Properties[5].Value}} | Export-Csv -Path "$home\Desktop\LogonEvents.csv" -NoTypeInformation
+    $logonEvents | Select-Object TimeCreated, @{Name = "User"; Expression = { $_.Properties[5].Value } } | Export-Csv -Path "$home\Desktop\LogonEvents.csv" -NoTypeInformation
 
     Write-Host "Logon events have been processed and saved to LogonEvents.csv."
 }

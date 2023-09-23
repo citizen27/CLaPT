@@ -4,33 +4,26 @@ $eventID = 4634
 # Query the Security Event Log for logoff events
 $logoffEvents = Get-WinEvent -LogName Security -FilterXPath "*[System[(EventID=$eventID)]]"
 
-# Check if there are logoff events
+# Check if there are logon events
 if ($logoffEvents.Count -eq 0) {
     Write-Host "No logoff events found."
-} else {
-    $logoffData = @()
+} 
+else {
+    Write-Host "Logoff Events:"
+    Write-Host "-------------------------"
 
-    # Iterate through logoff events and extract information
+    # Display relevant information from the logon events
     $logoffEvents | ForEach-Object {
-        $event = $_
-        $timeCreated = $event.TimeCreated
-        $user = $event.Properties[1].Value  # Use Property index 1 for TargetUserName
-
-        # Create a custom object with logoff event details
-        $logoffEvent = New-Object PSObject -Property @{
-            "Time" = $timeCreated
-            "User" = $user
-        }
-
-        # Add the logoff event to the data array
-        $logoffData += $logoffEvent
+        $evt = $_
+        $timeCreated = $evt.TimeCreated
+        $user = $evt.Properties[5].Value
+        Write-Host "Time: $timeCreated"
+        Write-Host "User: $user"
+        Write-Host "-------------------------"
     }
 
-    # Display logoff events in a well-formatted table
-    $logoffData | Format-Table -AutoSize
+    # Save logon events to a CSV file
+    $logoffEvents | Select-Object TimeCreated, @{Name = "User"; Expression = { $_.Properties[5].Value } } | Export-Csv -Path "$home\Desktop\LogoffEvents.csv" -NoTypeInformation
 
-    # Save logoff events to a CSV file
-    $logoffData | Export-Csv -Path "$home\Desktop\LogoffEvents.csv" -NoTypeInformation
-
-    Write-Host "Logoff events have been processed and saved to LogoffEvents.csv."
+    Write-Host "Logoff events have been processed and saved to LogonEvents.csv."
 }
