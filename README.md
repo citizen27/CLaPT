@@ -3,6 +3,8 @@ Collect Logs and Parse Them
 
 ## Overview
 
+Mind numbing parts of this docuemnttaion have been written by AI, particularly ChatGPT. All PowerShell scripts are written, tested and developed by me, or me and other humans. 
+
 This code repository contains many scripts for collecting and parsing Windows Logs and databases. It is designed to assist in the monitoring and analysis of Windows system events, enabling you to gain insights into system activities and potential security incidents.
 
 ## Features
