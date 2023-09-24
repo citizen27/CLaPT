@@ -36,7 +36,7 @@ Get-Content -Path $logFilePath | ForEach-Object {
 }
 
 # Save the parsed data to a CSV file
-$parsedData | Export-Csv -Path $outputCsvPath -NoTypeInformation
+$parsedData | Export-Csv -Path $outputCsvPath -NoTypeInformatio
 
 # Display a message indicating the process is complete
 Write-Host "Log parsing complete. Results saved to $outputCsvPath."
