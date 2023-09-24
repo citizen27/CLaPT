@@ -25,5 +25,5 @@ else {
     # Save system time change events to a CSV file
     $systimechangeEvents | Select-Object TimeCreated, @{Name = "User"; Expression = { $_.Properties[5].Value } } | Export-Csv -Path "$home\Desktop\System_Time_Change.csv" -NoTypeInformation
 
-    Write-Host "Sytstem Time Change events have been processed and saved to System_Time_Change.csv."
+    Write-Host "System Time Change events have been processed and saved to System_Time_Change.csv."
 }
