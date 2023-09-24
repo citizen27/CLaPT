@@ -10,7 +10,7 @@ if ($logonfailEvents.Count -eq 0) {
 } 
 else {
     Write-Host "Failed Logon Events:"
-    Write-Host "-------------------------"
+    Write-Host "-/-/-/-/-/-/-/-/-/-/-/-/"
 
     # Display relevant information from the failed logon events
     $logonfailEvents | ForEach-Object {
@@ -19,7 +19,7 @@ else {
         $user = $evt.Properties[5].Value
         Write-Host "Time: $timeCreated"
         Write-Host "User: $user"
-        Write-Host "-------------------------"
+        Write-Host "-/-/-/-/-/-/-/-/-/-/-/-/"
     }
 
     # Save logon events to a CSV file

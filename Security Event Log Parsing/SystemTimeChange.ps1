@@ -10,7 +10,7 @@ if ($systimechangeEvents.Count -eq 0) {
 }
 else {
     Write-Host "System Time Change Events:"
-    Write-Host "-------------------------"
+    Write-Host "-/-/-/-/-/-/-/-/-/-/-/-/"
 
     # Display relevant information from the system time change events
     $systimechangeEvents | ForEach-Object {
@@ -19,7 +19,7 @@ else {
         $user = $evt.Properties[5].Value
         Write-Host "Time: $timeCreated"
         Write-Host "User: $user"
-        Write-Host "-------------------------"
+        Write-Host "-/-/-/-/-/-/-/-/-/-/-/-/"
     }
 
     # Save system time change events to a CSV file
