@@ -2,7 +2,7 @@
 $logFilePath = "C:\Windows\Panther\SetupAct.log"
 
 # Define the path for the output CSV file
-$outputCsvPath = "$home\Desktop\Panther_SetupAct_Parsed.csv"
+$outputCsvPath = "$home\Desktop\CLaPT_Output\Panther_SetupAct_Parsed.csv"
 
 # Initialize an array to store parsed data
 $parsedData = @()

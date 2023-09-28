@@ -23,7 +23,7 @@ else {
     }
 
     # Save logon events to a CSV file
-    $OAAEvents | Select-Object TimeCreated, @{Name = "User"; Expression = { $_.Properties[5].Value } } | Export-Csv -Path "$home\Desktop\Object_Access_Attempt_Events.csv" -NoTypeInformation
+    $OAAEvents | Select-Object TimeCreated, @{Name = "User"; Expression = { $_.Properties[5].Value } } | Export-Csv -Path "$home\Desktop\CLaPT_Output\Object_Access_Attempt_Events.csv" -NoTypeInformation
 
     Write-Host "Object Access Attempt events have been processed and saved to Object_Access_Attempt_Events.csv."
 }

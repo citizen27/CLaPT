@@ -2,7 +2,7 @@
 $etlDirectory = "C:\Windows\Panther\"
 
 # Specify the output directory for CSV files
-$outputDirectory = "$home\Desktop\ETLParse_Output"
+$outputDirectory = "$home\Desktop\CLaPT_Output\ETLParse_Output"
 
 # Ensure the output directory exists; create it if it doesn't
 if (-not (Test-Path -Path $outputDirectory)) {
