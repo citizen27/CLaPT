@@ -12,4 +12,4 @@ In studio file to help me track changes and commits:
     - Renamed essential functions and .ps1 files
     - Restructed output path to "$home\Desktop\CLaPT_Output\" 
     - Added EventLogtamper.ps1
-            
+    - Added Conmtroller.ps1 that will invoke all available scripts and run them sequentially  
