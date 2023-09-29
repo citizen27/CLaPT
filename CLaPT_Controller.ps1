@@ -1,14 +1,16 @@
-#Invoke-Command -FilePath "C:\Users\xxx\Desktop\CLaPT\PantherParser\PantherELTParse.ps1"
-#Invoke-Command -FilePath "C:\Users\xxx\Desktop\CLaPT\PantherParser\PantherSetupActParser.ps1"
-#Invoke-Command -FilePath "C:\Users\xxx\Desktop\CLaPT\Security Event Log Parsing\EventLogTamper.ps1"
-#Invoke-Command -FilePath "C:\Users\xxx\Desktop\CLaPT\Security Event Log Parsing\FailedLogon.ps1"
-#Invoke-Command -FilePath "C:\Users\xxx\Desktop\CLaPT\ObjectAccess.ps1"
-#Invoke-Command -FilePath "C:\Users\xxx\Desktop\CLaPT\SystemTimeChange.ps1"
-#Invoke-Command -FilePath "C:\Users\xxx\Desktop\CLaPT\WinLogoff.ps1"
-#Invoke-Command -FilePath "C:\Users\xxx\Desktop\CLaPT\WinLogon.ps1"
-#Invoke-Command -FilePath "C:\Users\xxx\Desktop\CLaPT\ShutdownLog.ps1"
+# Specify the root directory where you want to start the search
+$rootDirectory = "$home\Desktop\CLaPT"
 
+# Get a list of all script files recursively within the root directory
+$scriptFiles = Get-ChildItem -Path $rootDirectory -Filter *.ps1 -File -Recurse
 
-$Master = Split-Path $MyInvocation.MyCommand.Definition -Leaf
-$ScriptPath = Split-Path $MyInvocation.MyCommand.Definition
-Get-ChildItem "$ScriptPath\*.ps1" | Where-Object{$_.Name -ne $Master} | ForEach-Object { & $_.FullName }
+# Loop through and execute each script file
+foreach ($scriptFile in $scriptFiles) {
+    Write-Host "Executing script: $($scriptFile.FullName)"
+    
+    # Execute the script
+    Invoke-Expression -Command (Get-Content -Path $scriptFile.FullName -Raw)
+    
+    # Add a separator for clarity
+    Write-Host "------------------------------------------------------"
+}
