@@ -1,5 +1,5 @@
 # Specify the root directory where you want to start the search
-$rootDirectory = "$home\Desktop\CLaPT"
+$rootDirectory = "$home\Desktop\CLaPT\CLaPTRun\"
 
 # Get a list of all script files recursively within the root directory
 $scriptFiles = Get-ChildItem -Path $rootDirectory -Filter *.ps1 -File -Recurse
