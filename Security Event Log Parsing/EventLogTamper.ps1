@@ -1,8 +1,14 @@
-# Define the logoff event ID (1102, 4719)
+# Define the audit event IDs (1102, 4719)
 $eventID = @(1102, 4625)
 
 # Query the Security Event Log for potential evidence of Event Log Tampering events
 $tamperingEvents = Get-WinEvent -LogName Security -FilterXPath "*[System[(EventID=$eventID)]]"
+
+$outputDirectory = "$home\Desktop\CLaPT_Output\Security\"
+
+if (-not (Test-Path -Path $outputDirectory)) {
+    New-Item -Path $outputDirectory -ItemType Directory
+}
 
 # Check if there are tampering events
 if ($tamperingEvents.Count -eq 0) {

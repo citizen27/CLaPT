@@ -4,6 +4,12 @@ $eventID = 4634
 # Query the Security Event Log for logoff events
 $logoffEvents = Get-WinEvent -LogName Security -FilterXPath "*[System[(EventID=$eventID)]]"
 
+$outputDirectory = "$home\Desktop\CLaPT_Output\Security\"
+
+if (-not (Test-Path -Path $outputDirectory)) {
+    New-Item -Path $outputDirectory -ItemType Directory
+}
+
 # Check if there are logoff events
 if ($logoffEvents.Count -eq 0) {
     Write-Host "No logoff events found."

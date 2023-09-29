@@ -4,6 +4,12 @@ $eventID = 4625
 # Query the Security Event Log for failed logon events
 $logonfailEvents = Get-WinEvent -LogName Security -FilterXPath "*[System[(EventID=$eventID)]]"
 
+$outputDirectory = "$home\Desktop\CLaPT_Output\Security\"
+
+if (-not (Test-Path -Path $outputDirectory)) {
+    New-Item -Path $outputDirectory -ItemType Directory
+}
+
 # Check if there are failed logon events
 if ($logonfailEvents.Count -eq 0) {
     Write-Host "No failed logon events found."

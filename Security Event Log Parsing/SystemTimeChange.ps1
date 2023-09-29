@@ -4,6 +4,12 @@ $eventID = 4616
 # Query the Security Event Log for system time change events
 $systimechangeEvents = Get-WinEvent -LogName Security -FilterXPath "*[System[(EventID=$eventID)]]"
 
+$outputDirectory = "$home\Desktop\CLaPT_Output\Security\"
+
+if (-not (Test-Path -Path $outputDirectory)) {
+    New-Item -Path $outputDirectory -ItemType Directory
+}
+
 # Check if there are system time change events
 if ($systimechangeEvents.Count -eq 0) {
     Write-Host "No System Time Change events found."

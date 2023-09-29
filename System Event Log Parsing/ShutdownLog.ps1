@@ -4,6 +4,12 @@ $eventIDs = @(41, 1074, 6006, 6008)
 # Query the System Event Log for shutdown events
 $shutdownEvents = Get-WinEvent -LogName System | Where-Object { $_.Id -in $eventIDs }
 
+$outputDirectory = "$home\Desktop\CLaPT_Output\System\"
+
+if (-not (Test-Path -Path $outputDirectory)) {
+    New-Item -Path $outputDirectory -ItemType Directory
+}
+
 # Check if there are shutdown events
 if ($shutdownEvents.Count -eq 0) {
     Write-Host "No Windows shutdown events found."

@@ -4,6 +4,12 @@ $eventID = 4663
 # Query the Security Event Log for Object Access Attempt events
 $OAAEvents = Get-WinEvent -LogName Security -FilterXPath "*[System[(EventID=$eventID)]]"
 
+$outputDirectory = "$home\Desktop\CLaPT_Output\Security\"
+
+if (-not (Test-Path -Path $outputDirectory)) {
+    New-Item -Path $outputDirectory -ItemType Directory
+}
+
 # Check if there are Object Access Attempt events
 if ($OAAEvents.Count -eq 0) {
     Write-Host "No logon events found."
