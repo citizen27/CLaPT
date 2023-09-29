@@ -27,7 +27,7 @@ else {
     }
 
     # Save shutdown events to a CSV file
-    $shutdownEvents | Select-Object Id, TimeCreated, @{Name = "User"; Expression = { $_.Properties[5].Value } } | Export-Csv -Path "$home\Desktop\CLaPT_Output\Windows_Shutdown_Events.csv" -NoTypeInformation
+    $shutdownEvents | Select-Object Id, TimeCreated, @{Name = "User"; Expression = { $_.Properties[5].Value } } | Export-Csv -Path "$home\Desktop\CLaPT_Output\System\Windows_Shutdown_Events.csv" -NoTypeInformation
 
     Write-Host "Windows shutdown events have been processed and saved to Windows_Shutdown_Events.csv."
 }

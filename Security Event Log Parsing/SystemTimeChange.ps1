@@ -23,7 +23,7 @@ else {
     }
 
     # Save system time change events to a CSV file
-    $systimechangeEvents | Select-Object TimeCreated, @{Name = "User"; Expression = { $_.Properties[5].Value } } | Export-Csv -Path "$home\Desktop\CLaPT_Output\System_Time_Change.csv" -NoTypeInformation
+    $systimechangeEvents | Select-Object TimeCreated, @{Name = "User"; Expression = { $_.Properties[5].Value } } | Export-Csv -Path "$home\Desktop\CLaPT_Output\Security\System_Time_Change.csv" -NoTypeInformation
 
     Write-Host "System Time Change events have been processed and saved to System_Time_Change.csv."
 }

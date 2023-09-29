@@ -23,7 +23,7 @@ else {
     }
 
     # Save logon events to a CSV file
-    $logonEvents | Select-Object TimeCreated, @{Name = "User"; Expression = { $_.Properties[5].Value } } | Export-Csv -Path "$home\Desktop\CLaPT_Output\Logon_Events.csv" -NoTypeInformation
+    $logonEvents | Select-Object TimeCreated, @{Name = "User"; Expression = { $_.Properties[5].Value } } | Export-Csv -Path "$home\Desktop\CLaPT_Output\Security\Logon_Events.csv" -NoTypeInformation
 
     Write-Host "Logon events have been processed and saved to Logon_Events.csv."
 }

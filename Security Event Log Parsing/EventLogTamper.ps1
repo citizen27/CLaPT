@@ -23,7 +23,7 @@ else {
     }
 
     # Save potential tampering events to a CSV file
-    $tamperingEvents | Select-Object TimeCreated, @{Name = "User"; Expression = { $_.Properties[5].Value } } | Export-Csv -Path "$home\Desktop\CLaPT_Output\Potential_Tampering_Events.csv" -NoTypeInformation
+    $tamperingEvents | Select-Object TimeCreated, @{Name = "User"; Expression = { $_.Properties[5].Value } } | Export-Csv -Path "$home\Desktop\CLaPT_Output\Security\Potential_Tampering_Events.csv" -NoTypeInformation
 
     Write-Host "Failed logon events have been processed and saved to Potential_Tampering_Events.csv."
 }
