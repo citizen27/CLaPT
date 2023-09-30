@@ -13,17 +13,17 @@ Certain parts of this code, particularly parsing files under "C:\Windows\Panther
 ## Usage ## 
 
 1. Download ZIP or clone through GitHub CLI or HTTPS.
-2. Move zipped "CLaPT-main" to local Desktop (I know this is not ideal, I am working on it.)
-3. Extract zip foilder to local Desktop.
-4. Rename folder after extraction to "CLaPT".
-5. Move CLaPT_Controller.ps1 from "CLaPT", to an alternate location.
-6. Open Administrative PowerShell session and run CLaPT_Controller.ps1
+2. Move zipped "CLaPT-main" to local Desktop
+4. Extract zip foilder to local Desktop.
+5. Rename folder after extraction to "CLaPT".
+6. Move CLaPT_Controller.ps1 from "CLaPT", to an alternate location.
+7. Open Administrative PowerShell session and run CLaPT_Controller.ps1
 
 ## Features
 
 - **Log / Database Parsing**: The code parses various Windows Event Logs, including Application, Security, System, and more, depending on your configuration. Also can parse "databases" that matter (SRUM, others...)
 
-- **Log Parsing**: The code parses collected logs and databases, extracting relevant information and organizing it for rapid analysis. This toolkit does NOT collect! If you want to forensicsally collect the logs, use KAPE or some other tool meant for that. This is for quick intel to figure out the stuff that matters.
+- **Log Parsing**: The code parses collected logs and databases, extracting relevant information and organizing it for rapid analysis. This toolkit does NOT collect! If you want to forensically collect the logs, use KAPE or some other tool meant for that. This is for quick intel to figure out the stuff that matters.
 
 - **Customization**: You can customize which logs to collect and how to parse them based on your specific requirements. Literally just run the scripts you want.
 
