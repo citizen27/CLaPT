@@ -1,5 +1,5 @@
 # Specify the root directory where you want to start the search
-$rootDirectory = "$home\Desktop\CLaPT\CLaPTRun\"
+$rootDirectory = "$home\Desktop\CLaPT\"
 
 # Specify the path for the error log file
 $errorLogFile = "$home\Desktop\CLaPT_Output\ErrorLog.txt"
