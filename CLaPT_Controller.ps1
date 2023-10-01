@@ -1,3 +1,4 @@
+
 # Define the root directory to start the search
 $rootDirectory = "$home\Desktop\CLaPT\"
 
@@ -47,4 +48,4 @@ $executedScripts | Export-Csv -Path $logFilePath -NoTypeInformation
 Write-Host "Script log saved to: $logFilePath"
 
 # Exit PowerShell
-Exit-PSSession
+Exit
