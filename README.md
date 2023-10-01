@@ -17,9 +17,11 @@ Certain parts of this code, particularly parsing files under "C:\Windows\Panther
 4. Extract the zip folder to the local desktop.
 5. Rename the folder after extraction to "CLaPT".
 6. Move CLaPT_Controller.ps1 from "CLaPT", to an alternate location.
-7. Open an administrative PowerShell session and run CLaPT_Controller.ps1.
-8. Review Deprecated.md for additional information on most detailed and up to date modules and scripts. 
-
+7. Open an administrative PowerShell session
+8. Navigate from system32 to Desktop (cd $home.\Desktop\)
+9. Run CLaPT_Controller.ps1. (.\CLaPT_Controller.ps1)
+10. Review Deprecated.md for additional information on most detailed and up to date modules and scripts.
+   
 ## Features
 
 - **Log / Database Parsing:** The code parses various Windows Event logs, including Application, Security, System, and more, depending on your configuration. This tool can also parse "databases" that matter (SRUM, SQL, etc.).
