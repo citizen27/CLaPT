@@ -1,33 +1,50 @@
-# Specify the root directory where you want to start the search
+# Define the root directory to start the search
 $rootDirectory = "$home\Desktop\CLaPT\"
 
-# Specify the path for the error log file
-$errorLogFile = "$home\Desktop\CLaPT_Output\ErrorLog.txt"
+# Get the current date and time for the log file
+$logDateTime = Get-Date -Format "yyyyMMddHHmmss"
+$logFilePath = "$home\Desktop\CLaPT_Output\RunScriptLog_$logDateTime.csv"
 
-# Create an empty error log file or clear its contents if it already exists
-$null = New-Item -Path $errorLogFile -ItemType File -Force
+# Create an empty array to store information about executed scripts
+$executedScripts = @()
 
-# Get a list of all script files recursively within the root directory
-$scriptFiles = Get-ChildItem -Path $rootDirectory -Filter *.ps1 -File -Recurse
+# Get all PowerShell script files in the specified directory and its subdirectories
+$scriptFiles = Get-ChildItem -Path $rootDirectory -File -Recurse -Filter *.ps1
 
-# Loop through and execute each script file
+# Loop through each script file and execute it
 foreach ($scriptFile in $scriptFiles) {
-    Write-Host "Executing script: $($scriptFile.FullName)"
-    
-    # Try to execute the script and capture any errors
-    try {
-        Invoke-Expression -Command (Get-Content -Path $scriptFile.FullName -Raw)
+    # Check if the file is a PowerShell script
+    if ($scriptFile.Extension -eq '.ps1') {
+        Write-Host "Executing script: $($scriptFile.FullName)"
+        
+        # Execute the script
+        try {
+            & "$($scriptFile.FullName)"
+            Write-Host "Script execution completed successfully."
+            
+            # Add information about executed script to the array
+            $executedScripts += [PSCustomObject]@{
+                ScriptName = $scriptFile.Name
+                Status = "Executed successfully"
+            }
+        }
+        catch {
+            Write-Host "Script execution failed: $_"
+            
+            # Add information about failed script to the array
+            $executedScripts += [PSCustomObject]@{
+                ScriptName = $scriptFile.Name
+                Status = "Execution failed: $_"
+            }
+        }
     }
-    catch {
-        $errorMessage = "Error in $($scriptFile.FullName): $_"
-        Write-Host $errorMessage
-        # Append the error message to the error log file
-        Add-Content -Path $errorLogFile -Value $errorMessage
-    }
-    
-    # Add a separator for clarity
-    Write-Host "------------------------------------------------------"
 }
 
+# Export the executed scripts information to a CSV file
+$executedScripts | Export-Csv -Path $logFilePath -NoTypeInformation
+
+# Display a message indicating where the log file was saved
+Write-Host "Script log saved to: $logFilePath"
+
 # Exit PowerShell
-Exit
+Exit-PSSession

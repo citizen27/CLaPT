@@ -4,7 +4,7 @@ $logonEventID = 4624
 
 # Define the output CSV file path and filename
 $outputDirectory = "$home\Desktop\CLaPT_Output\Security\"
-$outputFileName = "Logon_Events.csv"
+$outputFileName = "Logon_Event_Types.csv"
 $outputFilePath = Join-Path -Path $outputDirectory -ChildPath $outputFileName
 
 if (-not (Test-Path -Path $outputDirectory)) {
