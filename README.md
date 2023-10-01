@@ -28,7 +28,7 @@ Certain parts of this code, particularly parsing files under "C:\Windows\Panther
 
 - **Customization:** You can customize which logs to collect and how to parse them based on your specific requirements. Literally, just run the scripts you want.
 
-- **Output Formats:** Right nopw, evetyhing exports to the default of .CSV. Eventually the tool will support multiple output formats, making it easy to export parsed logs for further analysis, reporting, or integration with other tools.
+- **Output Formats:** Right now, everything exports to the default of .CSV. Eventually the tool will support multiple output formats, making it easy to export parsed logs for further analysis, reporting, or integration with other tools.
 
 - **Odd Artifact Parsing:** Some of these logs and artifacts are weird (Panther, obscure event IDs, etc.). Only collect what you need, or treat it like Pokemon. Panther logs are useful to determine issues with rollbacks, upgrades, or system failures. Particularly useful after updates on Windows systems. Collect if needed; this is of pretty low importance in most use cases. Panther logs get really granular and annoying, so forgive the lack of full support.
 
@@ -41,4 +41,5 @@ Before using any part of this tool kit, ensure you have the following prerequisi
 - Windows operating system (required to collect Windows Event Logs)
 - PowerShell 3.x or later  
 - Administrative privileges on system and in PowerShell and CMD terminals (required for accessing event logs, makes troubleshooting easier)
+- Understanding of Windows Event Log IDs
 - Patience
