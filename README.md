@@ -21,6 +21,32 @@ Certain parts of this code, particularly parsing files under "C:\Windows\Panther
 8. Navigate from system32 to Desktop (cd $home.\Desktop\)
 9. Run CLaPT_Controller.ps1. (.\CLaPT_Controller.ps1)
 10. Review Deprecated.md for additional information on most detailed and up to date modules and scripts.
+
+| Emoji | Meaning|
+| --- | --- |
+| 🔥 | New and currently being developed! |
+| 🔒 | Involves actions on the Security Event Log |
+| 🖥️ | Involves actions on the System Event Log |
+| 🐆 | Involves the Panther directory. |
+| 🧅 | Mutliple Event IDs handled. |
+
+
+| Script | Usage|
+| --- | --- |
+| 🔥 InternetArtifactCollector.ps1 | Collects root folders for web browsers. _Firefox and Chrome currently supported_. |
+| 🔒 🖥️EventLogTamper.ps1 | Parses Security and System Events for common Event Log tampering indicators.  |
+| 🐆 PantherETLParse.ps1 | Parses .ETL files found in _C:\Windows\Panther_ directory. |
+| 🐆 PantherSetupActLog.ps1 | Parses .LOG file found in _C:\Windows\Panther\SetupAct.log_. |
+| 🔒 AccountNameChange.ps1 | Parses Security Event Log for account name change events. |
+| 🔒 FailedLogon.ps1 | Parses Security Event Log for failed logon events. |
+| 🔒 LogonTypes.ps1 | Parses Security Event Log for successful logons, and displays logon type. |
+| 🔒 ObjectAccess.ps1 | Parses Security Event Log for user attempts to access an object (obscure) |
+| 🔒🧅 SecurityGroups.ps1 | Parses Security Event Log for actions on security enabled groups.|
+| 🔒 SystemTimeChange.ps1 | Parses Security Event Log for system time change events. |
+| 🔒 UserLockout.ps1 | Parses Security Event Log for user lockout events.  |
+| 🔒 WinLogoff.ps1 | Parses Security Event Log for logoff events. |
+| 🔒 WinLogon.ps1 | Parses Security Event Log for logon events. |
+| 🖥️ ShutdownLog.ps1 | Parses System Event Log for shutdown events. |
    
 ## Features
 

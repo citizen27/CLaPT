@@ -1,4 +1,4 @@
-# Define the logoff event ID (4625)
+# Define the failed logon event ID (4625)
 $eventID = 4625
 
 # Query the Security Event Log for failed logon events

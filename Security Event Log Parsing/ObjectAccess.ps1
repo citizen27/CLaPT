@@ -1,4 +1,4 @@
-# Define the logon event ID (4663)
+# Define the object access attempt event ID (4663)
 $eventID = 4663
 
 # Query the Security Event Log for Object Access Attempt events
