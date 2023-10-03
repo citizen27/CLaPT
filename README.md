@@ -18,7 +18,7 @@ Certain parts of this code, particularly parsing files under "C:\Windows\Panther
 5. Rename the folder after extraction to "CLaPT".
 6. Move CLaPT_Controller.ps1 from "CLaPT", to an alternate location.
 7. Open an administrative PowerShell session
-8. Navigate from system32 to Desktop (cd $home.\Desktop\)
+8. Navigate from system32 to Desktop (cd $home\Desktop\)
 9. Run CLaPT_Controller.ps1. (.\CLaPT_Controller.ps1)
 10. Review Deprecated.md for additional information on most detailed and up to date modules and scripts.
 
