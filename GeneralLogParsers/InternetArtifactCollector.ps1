@@ -10,7 +10,7 @@ $firefoxZipName2 = "Roaming_Firefox.zip"
 $chromeZipName1 = "Chrome_UserData.zip"
 
 # Define the destination folder
-$destinationFolder = "$home\Desktop\Internet_Test\"
+$destinationFolder = "$home\Desktop\CLaPT_Output\Collected Internet Artifacts\"
 
 # Create the destination folder if it doesn't exist
 if (-not (Test-Path $destinationFolder -PathType Container)) {
