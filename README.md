@@ -40,7 +40,7 @@ These scripts operate with elevated privileges, including Sytesm administrative 
 
 | **Script** | **Parsing Purpose** |
 | --- | --- |
-| 🔥 **InternetArtifactCollector.ps1** | *Collects root folders for web browsers. **Firefox and Chrome currently supported.*** |
+| 🔥 **InternetArtifactCollector.ps1** | *Collects default root folders for web browsers. **Firefox and Chrome currently supported.*** |
 | 🔒 🖥️**EventLogTamper.ps1**| *Security and System Events for common Event Log tampering indicators.*  |
 | 🐆 **PantherETLParse.ps1** | *.ETL files found in _C:\Windows\Panther_ directory.* |
 | 🐆 **PantherSetupActLog.ps1** | *.LOG file found in C:\Windows\Panther\SetupAct.log.* |
