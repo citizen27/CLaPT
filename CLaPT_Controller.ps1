@@ -1,4 +1,3 @@
-
 # Define the root directory to start the search
 $rootDirectory = "$home\Desktop\CLaPT\"
 
@@ -14,8 +13,8 @@ $scriptFiles = Get-ChildItem -Path $rootDirectory -File -Recurse -Filter *.ps1
 
 # Loop through each script file and execute it
 foreach ($scriptFile in $scriptFiles) {
-    # Check if the file is a PowerShell script
-    if ($scriptFile.Extension -eq '.ps1') {
+    # Check if the file is a PowerShell script and its name is not "NTUSER_Parse.ps1"
+    if ($scriptFile.Extension -eq '.ps1' -and $scriptFile.Name -ne 'NTUSER_Parse.ps1') {
         Write-Host "Executing script: $($scriptFile.FullName)"
         
         # Execute the script
