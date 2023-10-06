@@ -18,6 +18,9 @@ $registryKeys = @(
     #Explorer Searches
     "Software\Microsoft\Windows\CurrentVersion\Explorer\WordwheelQuery",
 
+    #Microsoft Office Server Connections
+    "Software\Microsoft\Office\<Office Version>\Common\Open Find\Microsoft Office Server\Recent Server List",
+
     #MRUs
     "Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedMRU",
     "Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU",
@@ -25,27 +28,37 @@ $registryKeys = @(
     "Software\Microsoft\Windows\CurrentVersion\Explorer\Policies\RunMR",
     "Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU\",
 
+    #Mount Points2 (User Assigned Drive Letters)
+    "Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2",
+
     #Network Information
     "Software\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged & Software\Microsoft\Windows",
     "Software\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles",
     "Software\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Managed & Software\Microsoft\Windows NT\CurrentVersion\NetworkList\Nla\Cache",
 
+    #Printer Jobs and Connections 
+    "\Printers\Connections",
+
     #Recent Docs
     "Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\",
-    "Software\Microsoft\Office{Version}{Excel|Word}\FileMRU",
-    "Software\Microsoft\Office{Version}{Excel|Word} UserMRU\LiveID_###\FileMRU",
+    "Software\Microsoft\Office\*\*\FileMRU",
+    "Software\Microsoft\Office\*\*\UserMRU\LiveID_###\FileMRU",
 
     #Shellbags
     "Software\Microsoft\Windows\Shell\BagMRU",
-    "Software\Microsoft\Windows\Shell\Bags"
+    "Software\Microsoft\Windows\Shell\Bags",
  
     #Typed Paths (Win 10 only)
-    "Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths"
+    "Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths",
+
+    #Typed URLs
+    "Software\Microsoft\Internet Explorer\TypedURLs",
+
+    #User Account Information
+    "Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs",
 
     #User Assist 
-    "Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count"
-
-
+    "Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\*\Count"
 )
 
 # Loop through the registry keys
@@ -54,9 +67,6 @@ foreach ($keyPath in $registryKeys) {
 
     # Check if the registry key exists
     if (Test-Path -Path $fullKeyPath) {
-        $key = Get-Item -LiteralPath $fullKeyPath
-
-        # Retrieve all values within the registry key
         $keyValues = Get-ItemProperty -Path $fullKeyPath | Select-Object -Property PSChildName, * -ExcludeProperty PS*
 
         # Initialize an array to store the collected data for this key
@@ -84,8 +94,15 @@ foreach ($keyPath in $registryKeys) {
             $data += $entry
         }
 
-        # Define the CSV file path for this key
-        $CSVFilePath = Join-Path -Path $outputDirectory -ChildPath "$($keyPath.Replace('\', '-')).csv"
+        # Get the last three components of the registry key path
+        $keyPathComponents = $keyPath -split '\\'
+        $keyName = ($keyPathComponents | Select-Object -Last 3) -join '-'
+
+        # Replace invalid characters in the filename with underscores
+        $keyName = $keyName -replace '[\\\/:*?"<>|]', '_'
+
+        # Define the CSV file path using the modified naming convention
+        $CSVFilePath = Join-Path -Path $outputDirectory -ChildPath "$keyName.csv"
 
         # Export the data for this key to a CSV file
         $data | Export-Csv -Path $CSVFilePath -NoTypeInformation
@@ -93,7 +110,7 @@ foreach ($keyPath in $registryKeys) {
         Write-Host "Data for key $keyPath has been exported to $CSVFilePath"
     }
     else {
-        # Write a message to the terminal if the registry key path doesn't exist
-        Write-Host "Registry key path does not exist: $fullKeyPath"
+        # Write a message to the terminal if the registry key path doesn't exist and skip this key
+        Write-Host "Registry key path does not exist: $fullKeyPath. Skipping..."
     }
 }
