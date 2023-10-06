@@ -2,6 +2,8 @@
 
 Mind numbing parts of this documentation and code commenting have been written by AI, particularly ChatGPT and Bard. All PowerShell scripts are written, tested and developed by me, or me and other humans (credit will be given, or code will be linked).  
 
+PowerShell is not the fastest, most efficent, easiest...scripting language. This is done in PowerShell for native Windows support, and the author loves hash tables and arrays.
+
 ## Overview
 
 **This code repository contains numerous scripts intended for parsing Windows logs and databases.** Its purpose is to facilitate the monitoring and analysis of Windows system events, offering insights into system activities and potential security incidents or visibility gaps. The ultimate objective of this "toolkit" is to encompass a substantial range of automated triage functionalities, with a focus on efficient responses to security incidents from an Incident Response (IR) perspective. ***This tool is not intended to be used for any form of preservation or forensic imaging.***
