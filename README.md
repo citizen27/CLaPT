@@ -2,8 +2,6 @@
 
 Mind numbing parts of this documentation and code commenting have been written by AI/ML, particularly ChatGPT and Bard (this ReadMe is almost entirely AI/ML generated because it does a way better job than I can). **All PowerShell scripts are written, tested and developed by me, or me and other humans** (credit will be given, or code will be linked).  
 
-PowerShell is not the fastest, most efficent, easiest...scripting language. This is done in PowerShell for native Windows support, and the author loves hash tables and arrays.
-
 ## Overview
 
 **This code repository encompasses a collection of scripts designed for the purpose of parsing Windows logs and databases.** 
