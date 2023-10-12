@@ -56,6 +56,7 @@ These scripts operate with elevated privileges, including **System-level adminis
 | 🔒 **WinLogon.ps1** | *Security Event Log for logon events*. |
 | 🖥️ **ShutdownLog.ps1** | *System Event Log for shutdown events.* |
 | 🔥 **NTUSER_Parse.ps1** | *NTUSER.dat for useful forensic goodies*. |
+| 🔥🖥️ **Relation-To-Logon-Off.ps1** | *Parses dozens of event IDs relating to logon and logoff activity. More comprehensive than previous scripts*.  |
    
 ## Features
 
