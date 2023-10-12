@@ -1,5 +1,5 @@
 # Define the event IDs relating to Windows OS shutdown
-$eventIDs = @(41, 1074, 6006, 6008)
+$eventIDs = @(41, 1074, 1100, 6006, 6008)
 
 # Query the System Event Log for shutdown events
 $shutdownEvents = Get-WinEvent -LogName System | Where-Object { $_.Id -in $eventIDs }
