@@ -43,7 +43,7 @@ These scripts operate with elevated privileges, including **System-level adminis
 | --- | --- |
 | 🔥 **InternetArtifactCollector.ps1** | *Collects default root folders for web browsers. **Firefox and Chrome currently supported.*** |
 | 🔒 🖥️**EventLogTamper.ps1**| *Security and System Events for common Event Log tampering indicators.*  |
-| 🐆 **PantherETLParse.ps1** | *.ETL files found in _C:\Windows\Panther_ directory*.* |
+| 🐆 **PantherETLParse.ps1** | *.ETL files found in C:\Windows\Panther_ directory.* |
 | 🐆 **PantherSetupActLog.ps1** | *.LOG file found in C:\Windows\Panther\SetupAct*.log.* |
 | 🔒 **AccountNameChange.ps1** | *Security Event Log for account name change events*.* |
 | 🔒 **FailedLogon.ps1** | *Security Event Log for failed logon events.* |
@@ -57,7 +57,7 @@ These scripts operate with elevated privileges, including **System-level adminis
 | 🖥️ **ShutdownLog.ps1** | *System Event Log for shutdown events.* |
 | 🔥 **NTUSER_Parse.ps1** | *NTUSER.dat for useful forensic goodies*. |
 | 🔥🖥️ **Relation-To-Logon-Off.ps1** | *Parses dozens of event IDs relating to logon and logoff activity. More comprehensive than previous scripts*.  |
-| 😴 **SleepStudy.ps1** | *Parses .ETl files found in _C:\Windows\System32\SleepStudy* |
+| 😴 **SleepStudy.ps1** | *Parses .ETl files found in C:\Windows\System32\SleepStudy* |
    
 ## Features
 
