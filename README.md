@@ -37,6 +37,8 @@ These scripts operate with elevated privileges, including **System-level adminis
 | 🐆 | Involves the Panther directory. |
 | 🧅 | Mutliple Event IDs handled. |
 | 🤡 | Has major issues, run at own risk. |
+| 👻 | Random Windows logs, DBs or artifacts. |
+
 
 
 | **Script** | **Parsing Purpose** |
@@ -58,6 +60,7 @@ These scripts operate with elevated privileges, including **System-level adminis
 | 🔥 **NTUSER_Parse.ps1** | *NTUSER.dat for useful forensic goodies*. |
 | 🔥🖥️ **Relation-To-Logon-Off.ps1** | *Parses dozens of event IDs relating to logon and logoff activity. More comprehensive than previous scripts*.  |
 | 😴 **SleepStudy.ps1** | *Parses .ETl files found in C:\Windows\System32\SleepStudy* |
+| 👻 **CrashDMP.ps1** | *Colects defualt location for memory dump post BSOD*. |
    
 ## Features
 
