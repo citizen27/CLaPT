@@ -60,7 +60,8 @@ These scripts operate with elevated privileges, including **System-level adminis
 | 🔥 **NTUSER_Parse.ps1** | *NTUSER.dat for useful forensic goodies*. |
 | 🔥🖥️ **Relation-To-Logon-Off.ps1** | *Parses dozens of event IDs relating to logon and logoff activity. More comprehensive than previous scripts*.  |
 | 😴 **SleepStudy.ps1** | *Parses .ETl files found in C:\Windows\System32\SleepStudy* |
-| 👻 **CrashDMP.ps1** | *Colects defualt location for memory dump post BSOD*. |
+| 👻 **CrashDMP.ps1** | *Collects default memory dump post BSOD*. |
+| 👻 **CloudFilesETL.ps1** | *Parses CloudFiles logs under System32*. |
    
 ## Features
 
